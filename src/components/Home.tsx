@@ -2,7 +2,6 @@
 //import React from 'react';
 import React, { useState } from 'react';
 
-
 const Home: React.FC = () => {
 
     // Estados para el formulario de contacto
@@ -23,7 +22,7 @@ const Home: React.FC = () => {
 
   return (
     <div>
-       {/* Barra de Navegación  puede ser la definitiva*/}
+       {/* Barra de Navegación  puede ser la definitiva
        <nav style={styles.nav}>
         <h1 style={styles.logo}>Qualitas</h1>
         <ul style={styles.navLinks}>
@@ -32,8 +31,8 @@ const Home: React.FC = () => {
           <li>Registro</li>
           <li>Contacto  </li>
         </ul>
-      </nav>
-
+      </nav>*/}
+  
       {/*contenido Principal con imagen de fondo */}
       <main style={styles.main}>
         <div style={styles.overlay}>
@@ -112,18 +111,13 @@ const Home: React.FC = () => {
           </button>
         </form>
       </section>
-
-      {/* Footer */}
-      <footer style={styles.footer}>
-        <p>© 2024 Mi Sitio Web. Todos los derechos reservados.</p>
-      </footer>
     </div>
   );
 };
 
 // Estilos en línea para mantener el ejemplo sencillo
 const styles: { [key: string]: React.CSSProperties } = {
-  nav: {
+    /*nav: {
     position: 'fixed',
     top: 0,
     width: '100%',
@@ -153,8 +147,7 @@ const styles: { [key: string]: React.CSSProperties } = {
     border: 'none',
     padding: '10px 20px',
     cursor: 'pointer',
-  },
-  
+  },*/
   main: {
     height: '100vh', //ocupamos toda la pantalla
     backgroundImage: 'url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjzBv98WG1qpPagnh00Va-GO6rlf95GBt5r32KeT2BHaKqp7AvQWOjTfSEzO-lRvKINsEe2NOxeX_rsPCKV_k1CGiHJOfNJ7ejFme4_nvmKWeZ5fOTbgVgq0CchnF_kkrO9gsMdlNOqpXA7/s1600/blog.jpg")', //imagen sacada de internet
@@ -288,15 +281,6 @@ const styles: { [key: string]: React.CSSProperties } = {
     fontSize: '16px',
     
   },
-  footer: {
-    backgroundColor: '#126aa2',
-    color: 'white',
-    textAlign: 'center' as 'center',  // Se especifica el valor exacto con 'as'
-    padding: '10px',
-    position: 'fixed' as 'fixed', // 'fixed' es el valor correcto para position
-    width: '100%',
-    bottom: 0,
-  }
 };
 
 export default Home;
