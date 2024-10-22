@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+
+
 
 const Login: React.FC = () => {
     const [email, setEmail] = useState<string>('');
@@ -6,9 +10,16 @@ const Login: React.FC = () => {
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        // Aquí puedes manejar la lógica de autenticación
+        //desde este lugar manejo la logica de autenticacion
         console.log({ email, password });
     };
+    
+        const navigate = useNavigate();
+      
+        const handleLogin = () => {
+          navigate('/Services');   
+       //services es la ruta donde quiero llegar
+        };
 
     return (
         <div style={styles.container}>
@@ -36,7 +47,8 @@ const Login: React.FC = () => {
                         style={styles.input}
                     />
                 </div>
-                <button type="submit" style={styles.button}>Login</button>
+                {/*<button onClick={handleLogin}>Iniciar sesión</button>*/}
+                <button onClick={handleLogin} style={{ backgroundColor: '#007BFF', color: 'white', padding: '10px 20px' }}>Iniciar sesión</button>
             </form>
         </div>
     );
@@ -75,7 +87,7 @@ const styles: { [key: string]: React.CSSProperties } = {
         border: '2px solid #ccc',
         fontSize: '16px',
     },
-    button: {
+   loginbutton: {
         width: '100%',
         padding: '10px',
         backgroundColor: '#007BFF',
@@ -85,6 +97,7 @@ const styles: { [key: string]: React.CSSProperties } = {
         cursor: 'pointer',
         fontSize: '16px',
     },
+    
 };
 
 export default Login;

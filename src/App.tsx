@@ -5,7 +5,10 @@ import Footer from './components/Footer';
 import Home from './components/Home'
 import Login from './components/Login';
 import Register from './components/Register';
-//import Services from './components/Services';
+import Services from './components/Services';
+import AreasEvaluacion from './components/AreasEvaluacion';
+
+//import SpecificTest from './components/SpecificTest'; -mas adelante los vamos a usar
 //import Contact from './components/Contact';
 
 const App: React.FC = () => {
@@ -19,8 +22,9 @@ const App: React.FC = () => {
                     <Route path="/home" element={<Home />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
+                    <Route path="/Services" element={<Services/>} />
+                    <Route path="/AreasEvaluacion" element={<AreasEvaluacion />} />  {/* Ruta del componente al que quieres navegar */}
 
-                    {/*<Route path="/services" element={<Services />} />*/}
                     {/*<Route path="/contact" element={<Contact />} />*/}
                 </Routes>
                 <Footer />
