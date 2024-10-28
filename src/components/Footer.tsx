@@ -5,7 +5,15 @@ const Footer: React.FC = () => {
         <footer style={styles.footer}>
             <br></br>
             <p style={styles.text}>© 2024 Qualitas. Todos los derechos reservados.</p>
+                <h5>Educación superior de calidad</h5>
+                <ul>
+                    <li>Categorias llamativas</li>
+                    <li>Excelentes resultados</li>
+                    <li>Contactos</li>
+                    <li>Descripción de servicios</li>
+                </ul>
         </footer>
+
     );
 };
 

@@ -5,7 +5,7 @@ const Services: React.FC = () => {
   const navigate = useNavigate();
 
   const handleAreasEvaluacion = () => {
-    navigate('/AreasEvaluacion'); // Redirigir a la página de areas de evaluacion
+    navigate('/AreasEvaluacion2'); // Redirigir a la página de areas de evaluacion
   };
 
     const handlePruebacompleta=()=>{

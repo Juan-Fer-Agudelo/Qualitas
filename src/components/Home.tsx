@@ -22,17 +22,7 @@ const Home: React.FC = () => {
 
   return (
     <div>
-       {/* Barra de Navegación  puede ser la definitiva
-       <nav style={styles.nav}>
-        <h1 style={styles.logo}>Qualitas</h1>
-        <ul style={styles.navLinks}>
-          <li>Servicios</li>
-          <li>Login</li>
-          <li>Registro</li>
-          <li>Contacto  </li>
-        </ul>
-      </nav>*/}
-  
+
       {/*contenido Principal con imagen de fondo */}
       <main style={styles.main}>
         <div style={styles.overlay}>
@@ -117,37 +107,7 @@ const Home: React.FC = () => {
 
 // Estilos en línea para mantener el ejemplo sencillo
 const styles: { [key: string]: React.CSSProperties } = {
-    /*nav: {
-    position: 'fixed',
-    top: 0,
-    width: '100%',
-    backgroundColor: '#333',
-    color: 'white',
-    padding: '10px 20px',
-    display: 'flex',
-    justifyContent: 'space-between',
-    zIndex: 1000, // Asegura que esté encima del contenido
-  },
-  logo: {
-    margin: 0,
-  },
-  navLinks: {
-    listStyle: 'none',
-    display: 'flex',
-    gap: '20px', // Aumentamos el espacio entre los elementos
-    marginRight: '30px', // Añadimos margen para evitar que los 'li' queden pegados al borde derecho
-  },
-  navButtons: {
-    display: 'flex',
-    gap: '10px',
-  },
-  navButton: {
-    backgroundColor: '#555',
-    color: 'white',
-    border: 'none',
-    padding: '10px 20px',
-    cursor: 'pointer',
-  },*/
+    
   main: {
     height: '100vh', //ocupamos toda la pantalla
     backgroundImage: 'url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjzBv98WG1qpPagnh00Va-GO6rlf95GBt5r32KeT2BHaKqp7AvQWOjTfSEzO-lRvKINsEe2NOxeX_rsPCKV_k1CGiHJOfNJ7ejFme4_nvmKWeZ5fOTbgVgq0CchnF_kkrO9gsMdlNOqpXA7/s1600/blog.jpg")', //imagen sacada de internet
@@ -195,7 +155,7 @@ const styles: { [key: string]: React.CSSProperties } = {
     padding: '10px 20px',
     backgroundColor: '#f4f4f4',
     textAlign: 'center',
-    marginBottom: '50px', // Espacio entre la sección de servicios y el footer
+    marginBottom: '50px', //Espacio entre la sección de servicios y el footer
   },
   sectionTitle: {
     fontSize: '2.5rem',

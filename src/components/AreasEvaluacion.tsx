@@ -1,3 +1,4 @@
+//Este componente ya no se utiliza, se  puede borrar mas adelante.
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
