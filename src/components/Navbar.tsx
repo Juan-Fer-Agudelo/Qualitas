@@ -7,7 +7,7 @@ const Navbar: React.FC = () => {
             <h1 style={styles.logo}>Qualitas</h1>
             <ul style={styles.navLinks}>
                 <li>
-                    <Link to="/home" style={styles.link}>Home</Link> {/*si al darle click a la barra de navegacion no me lleva donde es, debo fijarme en estas lineas */}
+                    <Link to="/home" style={styles.link}>Home</Link>
                 </li>
                 <li>
                     <Link to="/login" style={styles.link}>Login</Link>
@@ -48,7 +48,9 @@ const styles = {
         color: '#fff',
         textDecoration: 'none',
         fontSize: '18px',
+        transition: 'color 0.3s ease, transform 0.3s ease', // Transición suave para color y tamaño
     } as React.CSSProperties,
+
 };
 
 export default Navbar;

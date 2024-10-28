@@ -1,17 +1,23 @@
 // src/components/Home.tsx
-//import React from 'react';
 import React, { useState } from 'react';
 
 const Home: React.FC = () => {
-
-    // Estados para el formulario de contacto
+  // Estados para el formulario de contacto
   const [nombre, setNombre] = useState('');
   const [correo, setCorreo] = useState('');
   const [mensaje, setMensaje] = useState('');
 
+  
+  const biografia = `
+    Bienvenidos a Qualitas, donde estamos comprometidos en brindar una educación personalizada y de calidad.
+    Nos especializamos en la realización de pruebas, simulacros y exámenes personalizados, diseñados para ayudarte a alcanzar
+    tus objetivos académicos y profesionales. Nuestro equipo de expertos se dedica a ofrecer un soporte educativo
+    excepcional, guiándote en cada paso de tu preparación. ¡Confía en nosotros para llevar tus conocimientos al siguiente nivel!
+  `;
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    //logica para manejar el envío del formulario
+    // Lógica para manejar el envío del formulario
     console.log({
       nombre,
       correo,
@@ -19,46 +25,23 @@ const Home: React.FC = () => {
     });
   };
 
-
   return (
     <div>
-
-      {/*contenido Principal con imagen de fondo */}
+      {/* Contenido Principal con imagen de fondo */}
       <main style={styles.main}>
         <div style={styles.overlay}>
           <h2 style={styles.mainText}>QUALITAS comprometidos contigo</h2>
-          <p style={styles.subText}>Realización de prubas | Simulacros | Examenes personalizados</p>
-          <button style={styles.ctaButton}>Contactanos</button>
+          <p style={styles.subText}>Realización de pruebas | Simulacros | Exámenes personalizados</p>
+          <button style={styles.ctaButton}>Contáctanos</button>
         </div>
       </main>
-       {/*Seccion de Servicios */}
-       <section style={styles.servicesSection}>
-        <h2 style={styles.sectionTitle}>Servicios</h2>
-        <div style={styles.servicesGrid}>
-          <div style={styles.serviceCard}>
-            <h3 style={styles.serviceTitle}>Servicio 1</h3>
-            <p style={styles.serviceDescription}>
-              Breve descripción del servicio 1 que ofreces.
-            </p>
-            <button style={styles.button}>Presentar prueba</button>
-          </div>
-          <div style={styles.serviceCard}>
-            <h3 style={styles.serviceTitle}>Servicio 2</h3>
-            <p style={styles.serviceDescription}>
-              Breve descripción del servicio 2 que ofreces.
-            </p>
-            <button style={styles.button}>Presentar prueba</button>
-          </div>
-          <div style={styles.serviceCard}>
-            <h3 style={styles.serviceTitle}>Servicio 3</h3>
-            <p style={styles.serviceDescription}>
-              Breve descripción del servicio 3 que ofreces.
-            </p>
-            <button style={styles.button}>Presentar prueba</button>
-          </div>
-          {/* Puedes agregar más tarjetas aquí */}
-        </div>
+
+      {/* Sección de Biografía */}
+      <section style={styles.bioSection}>
+        <h2 style={styles.bioTitle}>Quienes Somos</h2>
+        <p style={styles.bioText}>{biografia}</p>
       </section>
+
       {/* Sección de Contacto */}
       <section id="contacto" style={styles.contactSection}>
         <h2 style={styles.contactTitle}>Contáctanos</h2>
@@ -107,10 +90,9 @@ const Home: React.FC = () => {
 
 // Estilos en línea para mantener el ejemplo sencillo
 const styles: { [key: string]: React.CSSProperties } = {
-    
   main: {
-    height: '100vh', //ocupamos toda la pantalla
-    backgroundImage: 'url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjzBv98WG1qpPagnh00Va-GO6rlf95GBt5r32KeT2BHaKqp7AvQWOjTfSEzO-lRvKINsEe2NOxeX_rsPCKV_k1CGiHJOfNJ7ejFme4_nvmKWeZ5fOTbgVgq0CchnF_kkrO9gsMdlNOqpXA7/s1600/blog.jpg")', //imagen sacada de internet
+    height: '100vh',
+    backgroundImage: 'url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjzBv98WG1qpPagnh00Va-GO6rlf95GBt5r32KeT2BHaKqp7AvQWOjTfSEzO-lRvKINsEe2NOxeX_rsPCKV_k1CGiHJOfNJ7ejFme4_nvmKWeZ5fOTbgVgq0CchnF_kkrO9gsMdlNOqpXA7/s1600/blog.jpg")',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     display: 'flex',
@@ -125,22 +107,18 @@ const styles: { [key: string]: React.CSSProperties } = {
     transform: 'translate(-50%, -50%)',
     color: 'white',
     textAlign: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Fondo semitransparente
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
     padding: '20px',
     borderRadius: '10px',
   },
   mainText: {
-    //position: 'relative' as const,
-    //zIndex: 1,
-    //color: 'white',
     fontSize: '3rem',
     margin: 0,
-    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)', // Añadimos sombra al texto
-
+    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)',
   },
   subText: {
     fontSize: '1.5rem',
-    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)', // Añadimos sombra al texto
+    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)',
   },
   ctaButton: {
     marginTop: '20px',
@@ -151,55 +129,31 @@ const styles: { [key: string]: React.CSSProperties } = {
     border: 'none',
     cursor: 'pointer',
   },
-  servicesSection: {
-    padding: '10px 20px',
-    backgroundColor: '#f4f4f4',
+  bioSection: {
+    padding: '40px 20px',
+    backgroundColor: '#ffffff',
     textAlign: 'center',
-    marginBottom: '50px', //Espacio entre la sección de servicios y el footer
+    marginBottom: '50px',
+    borderRadius: '15px', // Bordes redondeados
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', 
+    maxWidth: '700px', 
+    margin: '0 auto', 
+    border: '2px solid #007bff', 
   },
-  sectionTitle: {
+  bioTitle: {
     fontSize: '2.5rem',
-    marginBottom: '5px',
+    marginBottom: '20px',
+    color: '#333',
   },
-  servicesGrid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-    gap: '20px',
-    maxWidth: '1200px',
-    margin: '0 auto',
-  },
-  serviceCard: {
-    backgroundColor: '#fff',
-    padding: '20px',
-    borderRadius: '10px',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-    transition: 'transform 0.3s ease',
-  },
-  serviceCardHover: {
-    transform: 'scale(1.05)',
-  },
-  serviceTitle: {
-    fontSize: '1.8rem',
-    margin: '10px 0',
-  },
-  serviceDescription: {
-    fontSize: '1rem',
-    color: '#666',
-  },
-  button: {
-    padding: '10px 10px',
-    backgroundColor: '#007bff',
-    color: '#fff',
-    border: 'none',
-    borderRadius: '5px',
-    cursor: 'pointer',
-    
+  bioText: {
+    fontSize: '1.2rem',
+    lineHeight: '1.6',
+    color: '#555',
   },
   contactSection: {
-    padding: '1px 5px',
+    padding: '20px 10px',
     backgroundColor: '#f9f9f9',
     marginBottom: '90px',
-    
   },
   contactTitle: {
     textAlign: 'center',
@@ -239,7 +193,6 @@ const styles: { [key: string]: React.CSSProperties } = {
     borderRadius: '5px',
     cursor: 'pointer',
     fontSize: '16px',
-    
   },
 };
 

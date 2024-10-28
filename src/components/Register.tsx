@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios'; // Asegúrate de instalar axios
 
 const Register: React.FC = () => {
     const [username, setUsername] = useState('');
@@ -6,14 +7,24 @@ const Register: React.FC = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         if (password !== confirmPassword) {
             alert("Las contraseñas no coinciden");
             return;
         }
-        //logica para el  envio del formulario
-        console.log({ username, email, password });
+
+        try {
+            const response = await axios.post('http://localhost:3000/api/register', {
+                username,
+                email,
+                password,
+            });
+            alert(response.data.message); // Mensaje de éxito del backend
+        } catch (error) {
+            alert('Error al registrar el usuario');
+            console.error(error);
+        }
     };
 
     return (

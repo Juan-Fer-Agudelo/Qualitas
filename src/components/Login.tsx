@@ -1,25 +1,38 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-
-
-
 const Login: React.FC = () => {
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
+    const navigate = useNavigate();
 
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    // Función para manejar el envío del formulario
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        //desde este lugar manejo la logica de autenticacion
-        console.log({ email, password });
+
+        try {
+            const response = await fetch('http://localhost:3000/api/login', { // Usa la URL y endpoint de tu backend
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email, password }),
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                console.log('Login exitoso:', data);
+
+                // Si el login es exitoso, navega a la página de servicios
+                navigate('/Services');
+            } else {
+                console.log('Error en el login:', response.statusText);
+                alert('Login fallido, verifica tus credenciales.');
+            }
+        } catch (error) {
+            console.error('Error en el proceso de login:', error);
+        }
     };
-    
-        const navigate = useNavigate();
-      
-        const handleLogin = () => {
-          navigate('/Services');   
-       //services es la ruta donde quiero llegar
-        };
 
     return (
         <div style={styles.container}>
@@ -47,8 +60,7 @@ const Login: React.FC = () => {
                         style={styles.input}
                     />
                 </div>
-                {/*<button onClick={handleLogin}>Iniciar sesión</button>*/}
-                <button onClick={handleLogin} style={{ backgroundColor: '#007BFF', color: 'white', padding: '10px 20px' }}>Iniciar sesión</button>
+                <button type="submit" style={styles.loginbutton}>Iniciar sesión</button>
             </form>
         </div>
     );
@@ -87,7 +99,7 @@ const styles: { [key: string]: React.CSSProperties } = {
         border: '2px solid #ccc',
         fontSize: '16px',
     },
-   loginbutton: {
+    loginbutton: {
         width: '100%',
         padding: '10px',
         backgroundColor: '#007BFF',
@@ -97,7 +109,6 @@ const styles: { [key: string]: React.CSSProperties } = {
         cursor: 'pointer',
         fontSize: '16px',
     },
-    
 };
 
 export default Login;
