@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import axios from 'axios'; // Asegúrate de instalar axios
 
-const Register: React.FC = () => {
+interface RegisterFormProps{}
+
+export const Register: React.FC<RegisterFormProps> = () => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+    const [message, setMessage] = useState<string>('');
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -15,15 +18,14 @@ const Register: React.FC = () => {
         }
 
         try {
-            const response = await axios.post('http://localhost:3000/api/register', {
-                username,
+            const response = await axios.post('http://localhost:3001/api/register', {
+                name: username,
                 email,
                 password,
             });
-            alert(response.data.message); // Mensaje de éxito del backend
-        } catch (error) {
-            alert('Error al registrar el usuario');
-            console.error(error);
+            setMessage('Registro Exitoso') // Mensaje de éxito del backend
+        } catch (error:any) {
+            setMessage('Error al registrar el usuario' + error.response.data.message);
         }
     };
 
