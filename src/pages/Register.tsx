@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+/*import React, { useState } from 'react';
 import axios from 'axios'; // Asegúrate de instalar axios
 
 interface RegisterFormProps{}
@@ -125,4 +125,119 @@ const styles = {
     },
 };
 
+export default Register;*/
+
+
+import React from "react";
+
+const Register: React.FC = () => {
+  return (
+    <div style={styles.container}>
+      <h1 style={styles.title}>Regístrate</h1>
+      <p style={styles.subtitle}>Comencemos con tu prueba gratuita de 30 días</p>
+      <form style={styles.form}>
+        <input type="text" placeholder="Name" style={styles.input} />
+        <input type="email" placeholder="Email" style={styles.input} />
+        <input type="password" placeholder="Password" style={styles.input} />
+        <button type="submit" style={styles.createAccountButton}>
+          Crear Cuenta
+        </button>
+        <p style={styles.loginText}>
+          ¿Ya tienes una cuenta?{" "}
+          <a href="/login" style={styles.loginLink}>
+            Log in
+          </a>
+        </p>
+        <button type="button" style={styles.appleButton}>
+          <span>🍎</span> Regístrate con Apple
+        </button>
+        <button type="button" style={styles.googleButton}>
+          <span>🔵</span> Regístrate con Google
+        </button>
+      </form>
+    </div>
+  );
+};
+
+const styles = {
+  container: {
+    maxWidth: "400px",
+    margin: "2 auto",
+    padding: "30px",
+    borderRadius: "20px",
+    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+    textAlign: "center" as const,
+    fontFamily: "Arial, sans-serif",
+  },
+  title: {
+    fontSize: "24px",
+    fontWeight: "bold" as const,
+    marginBottom: "10px",
+  },
+  subtitle: {
+    fontSize: "14px",
+    color: "gray",
+    marginBottom: "20px",
+  },
+  form: {
+    display: "flex",
+    flexDirection: "column" as const,
+    gap: "15px",
+  },
+  input: {
+    padding: "10px",
+    borderRadius: "5px",
+    border: "1px solid #ccc",
+    fontSize: "14px",
+  },
+  createAccountButton: {
+    backgroundColor: "#1579b9",
+    color: "white",
+    padding: "10px",
+    borderRadius: "5px",
+    border: "none",
+    fontSize: "16px",
+    cursor: "pointer",
+  },
+  loginText: {
+    fontSize: "14px",
+    color: "gray",
+    marginTop: "10px",
+  },
+  loginLink: {
+    color: "#1579b9",
+    textDecoration: "none",
+  },
+  appleButton: {
+    backgroundColor: "black",
+    color: "white",
+    padding: "10px",
+    borderRadius: "5px",
+    border: "none",
+    fontSize: "16px",
+    cursor: "pointer",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "10px",
+  },
+  googleButton: {
+    backgroundColor: "white",
+    color: "black",
+    padding: "10px",
+    borderRadius: "5px",
+    border: "1px solid #ccc",
+    fontSize: "16px",
+    cursor: "pointer",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "10px",
+  },
+};
+
 export default Register;
+
+
+
+
