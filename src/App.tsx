@@ -3,17 +3,17 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './components/Home'
-import Login from './components/Login';
-import Register from './components/Register';
-import Services from './components/Services';
-import AreasEvaluacion from './components/AreasEvaluacion';
-import AreasEvaluacion2 from './components/AreasEvaluacion2';
-import ReadingForm from './components/ReadingForm';
-import MathForm from './components/MathForm';
-import CivicCompetenciesForm from './components/CivicCompetenciesForm';
-import NaturalSciencesForm from './components/NaturalSciencesForm';
-import EnglishForm from './components/EnglishForm';
-import Pruebacompleta from './components/Pruebacompleta';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import Services from './pages/Services';
+import AreasEvaluacion from './pages/AreasEvaluacion';
+import AreasEvaluacion2 from './pages/AreasEvaluacion2';
+import ReadingForm from './pages/ReadingForm';
+import MathForm from './pages/MathForm';
+import CivicCompetenciesForm from './pages/CivicCompetenciesForm';
+import NaturalSciencesForm from './pages/NaturalSciencesForm';
+import EnglishForm from './pages/EnglishForm';
+import Pruebacompleta from './pages/Pruebacompleta';
 
 
 //import SpecificTest from './components/SpecificTest'; -mas adelante los vamos a usar
