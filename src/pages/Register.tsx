@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import axios from 'axios'; // Asegúrate de instalar axios
 
 const Register: React.FC = () => {
     const [username, setUsername] = useState('');
@@ -20,7 +20,7 @@ const Register: React.FC = () => {
                 email,
                 password,
             });
-            alert(response.data.message); 
+            alert(response.data.message); // Mensaje de éxito del backend
         } catch (error) {
             alert('Error al registrar el usuario');
             console.error(error);

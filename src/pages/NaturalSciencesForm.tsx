@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import FormComponent from './FormComponent';
+import FormComponent from '../components/FormComponent';
 
 const NaturalSciencesForm: React.FC = () => {
     const navigate = useNavigate();
